@@ -140,12 +140,24 @@ export default function Home() {
 
       <ul>
         {users.map((user) => (
-          <li key={user.id} className="grid grid-cols-4 gap-4 p-2 border-b"> {/* Cria um grid com 4 colunas */}
-            <span>Matrícula: {user.matricula}</span>
-            <span>Nome: {user.name}</span>
-            <span>Email: {user.email}</span>
-            <span>Papel: {user.role}</span>
-            <div className="flex justify-between">
+          <li key={user.id} className=" grid grid-cols-4 gap-8 p-2 border-b">
+            <div>
+              <span className="font-semibold text-2xl">Matrícula:</span>
+              <div className="py-2">{user.matricula}</div>
+            </div>
+            <div>
+              <span className="font-semibold text-2xl">Nome:</span>
+              <div className="py-2">{user.name}</div>
+            </div>
+            <div>
+              <span className="font-semibold text-2xl">Email:</span>
+              <div className="py-2">{user.email}</div>
+            </div>
+            <div>
+              <span className="font-semibold text-2xl">Cargo</span>
+              <div className="py-2">{user.role}</div>
+            </div>
+            <div className="flex justify-between col-span-4 mt-2">
               <button
                 className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
                 onClick={() => handleEditUser(user)}
@@ -162,9 +174,6 @@ export default function Home() {
           </li>
         ))}
       </ul>
-
-
-
     </div>
   );
 }
